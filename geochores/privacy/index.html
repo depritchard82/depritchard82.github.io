@@ -31,26 +31,32 @@
     <article class="article">
       <div class="eyebrow">Your family’s information</div>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: 14 September 2026</p>
+      <p class="updated">Last updated: 18 September 2026</p>
       <p>GeoChores is developed and operated by David Pritchard. It helps a parent or guardian create family routines, pair a child’s device, review routine progress and manage selected app restrictions.</p>
 
       <h2>Information GeoChores stores</h2>
-      <p>GeoChores stores the parent’s email address for authentication. It also stores information entered or created by the family, including parent, child and household names; household membership; routine and chore names; schedules, timers and completion status; lock commands and reasons; pairing records; and recent device-contact times.</p>
-      <p>The service also stores account and household identifiers and a notification token for the child device. These are used to keep the correct family accounts connected and deliver parent-requested notifications.</p>
+      <p>GeoChores stores the parent’s email address for authentication. It also stores information entered or created by the family, including parent, child and household names; household membership; routine and chore names; schedules, timers and completion status; lock commands and reasons; pairing records; help requests and acknowledgements; approval and retry feedback; activity records; and recent device-contact times.</p>
+      <p>The service also stores account and household identifiers and notification tokens for parent and child devices. These are used to keep the correct family accounts connected and deliver parent-requested notifications.</p>
 
       <h2>Information that remains on the child device</h2>
       <p>The precise home coordinate used for arrival monitoring is handled on the child device and is not uploaded to the GeoChores cloud database. The app may synchronise the resulting routine state or device-contact time, but not a location history.</p>
       <p>Apple’s Family Controls framework represents selected apps, categories and websites with privacy-preserving tokens. GeoChores keeps the selection on the child device so it can apply Apple’s restrictions; the parent device does not receive a readable list of the child’s installed or selected apps.</p>
 
       <h2>Photo evidence</h2>
-      <p>Photos taken for ordinary routine tasks remain on the child device. When a child submits a shared reward chore with photo evidence, GeoChores also stores a copy of that photo in the household’s Firebase cloud record so a parent in that household can view it and decide whether to approve the chore. The shared photo remains with the reward record until that chore is reset or deleted, subject to temporary copies in service backups or logs.</p>
+      <p>When a child submits photo evidence for a routine task or shared reward chore in a connected household, GeoChores uploads the photo to private Firebase Cloud Storage. A reference in the household record lets an authorised parent view it and review the task. Access is restricted to authorised parents in the household and the child who submitted the photo.</p>
+      <p>Build 74 and later re-encode photos before upload to remove embedded metadata, including GPS metadata. Photos are deleted when replaced, cleared, reset or deleted, and become eligible for automatic deletion seven days after upload, including photos still associated with a task. Cleanup runs daily, so automatic deletion can take up to an additional 24 hours, or longer if a service failure delays processing.</p>
+      <p>Temporary local copies and provider backups or technical logs may remain for a limited period. Deleting the app does not delete cloud photos. Local demonstration data and some older versions may retain photos only on the device.</p>
+
+      <h2>Subscriptions and purchases</h2>
+      <p>Apple processes subscription payments. GeoChores does not receive your payment card details. To verify purchases and maintain household subscription access, the app sends product and transaction identifiers and Apple purchase verification data to its Firebase backend. This information is associated with the parent account and household and is used for verification, subscription access, restoration and support.</p>
+      <p>Manage or cancel subscriptions in your Apple Account subscription settings. Deleting a GeoChores account does not cancel an Apple subscription. Prices, renewal terms and any eligible introductory offer are shown before purchase.</p>
 
       <h2>How information is used</h2>
       <p>Information is used only to provide GeoChores’ account, pairing, routine, progress, notification, location-trigger and app-restriction functions; maintain security; troubleshoot problems; and respond to support requests.</p>
       <p>GeoChores does not sell personal information, show third-party advertising or use family information for cross-app tracking.</p>
 
       <h2>Service providers and sharing</h2>
-      <p>Authentication, cloud database storage, server functions and push-notification delivery are provided using Google Firebase. Apple provides the operating-system services used for location, notifications and Family Controls. These providers process information as needed to deliver their services and apply their own security and privacy obligations.</p>
+      <p>Authentication, cloud database and private photo storage, server functions and push-notification delivery are provided using Google Firebase. Apple provides the operating-system services used for location, notifications and Family Controls. These providers process information as needed to deliver their services and apply their own security and privacy obligations.</p>
       <p>Information may also be disclosed when required by law, to protect users or the service, or as part of a business transfer where appropriate protections continue to apply.</p>
 
       <h2>Children’s information and parental control</h2>
@@ -58,9 +64,9 @@
       <div class="notice">Do not enter precise addresses into chore names, lock reasons or other free-text fields. Use the child’s first name or a nickname where practical.</div>
 
       <h2>Retention, deletion and choices</h2>
-      <p>Cloud information is retained while it is needed to operate the account and household. A parent can delete a paired child from GeoChores settings, which removes that child’s pairing, cloud routine state, lock state, progress history, device status and child authentication account. Some short-lived technical records may remain temporarily in backups or service logs.</p>
+      <p>Cloud information is retained while it is needed to operate the account and household. A parent can delete a paired child from GeoChores settings, which removes that child’s pairing, cloud routine state, lock state, progress history, help requests, notification records, cloud photos, device status and child authentication account. Some short-lived technical records may remain temporarily in backups or service logs.</p>
       <p>A parent can request deletion of their account from GeoChores settings. If another parent remains, that parent keeps the household; if the final parent is deleted, the household and its child accounts and data are deleted too. For deletion help, or to ask for access or correction, email <a href="mailto:depritchard.apps@gmail.com">depritchard.apps@gmail.com</a> from the parent account’s registered email address.</p>
-      <p>Location, notification and Family Controls permission can be changed in iOS Settings. Revoking a permission may prevent the related GeoChores feature from working. Photos and app-selection data stored only on a device are removed when the app’s local data is removed, subject to iOS behaviour. Shared reward-chore photos stored in the household cloud record are not removed merely by deleting the app from a device.</p>
+      <p>Location, notification and Family Controls permission can be changed in iOS Settings. Revoking a permission may prevent the related GeoChores feature from working. Photos and app-selection data stored only on a device are removed when the app’s local data is removed, subject to iOS behaviour. Cloud routine and reward-chore photos are not removed merely by deleting the app from a device.</p>
 
       <h2>Security</h2>
       <p>GeoChores uses authenticated accounts, household access rules and platform security controls intended to restrict information to the correct household. Reasonable safeguards are used, but no online service can guarantee absolute security.</p>
